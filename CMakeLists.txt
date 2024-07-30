@@ -38,6 +38,7 @@ option(BUNDLE_SKIP_RTTOV "Don't build rttov"  "ON") # Skip rttov build unless us
 ecbuild_bundle( PROJECT rttov     GIT "https://github.com/JCSDA/rttov.git"       BRANCH develop UPDATE )
 
 ecbuild_bundle( PROJECT oops      GIT "https://github.com/JCSDA/oops.git"        BRANCH develop UPDATE )
+ecbuild_bundle( PROJECT vader     GIT "https://github.com/jcsda/vader.git"       BRANCH develop UPDATE )
 ecbuild_bundle( PROJECT saber     GIT "https://github.com/JCSDA/saber.git"       BRANCH develop UPDATE)
 ecbuild_bundle( PROJECT crtm      GIT "https://github.com/JCSDA/CRTMv3.git"      BRANCH develop UPDATE )
 ecbuild_bundle( PROJECT ioda      GIT "https://github.com/JCSDA/ioda.git"        BRANCH develop UPDATE )
@@ -76,18 +77,19 @@ branch_checkout (REPO_DIR_NAME ufo-data
 
 set(MPAS_DOUBLE_PRECISION "ON" CACHE STRING "MPAS-Model: Use double precision 64-bit Floating point.")
 set(MPAS_CORES init_atmosphere atmosphere CACHE STRING "MPAS-Model: cores to build.")
-ecbuild_bundle( PROJECT MPAS GIT "https://github.com/JCSDA-internal/MPAS-Model.git" BRANCH release-stable UPDATE)
+ecbuild_bundle( PROJECT MPAS      GIT "https://github.com/MPAS-Dev/MPAS-Model" BRANCH hotfix-v8.2.1 UPDATE )
 ecbuild_bundle( PROJECT mpas-jedi GIT "https://github.com/JCSDA/mpas-jedi"  BRANCH develop UPDATE)
+ecbuild_bundle( PROJECT mpas-jedi GIT "https://github.com/JCSDA-internal/mpas-jedi"      BRANCH feature/MPAS-Model_v8.1 )
 
 # same procedure for mpas-jedi-data
 find_branch_name(REPO_DIR_NAME mpas-jedi)
 if( NOT DEFINED ENV{LOCAL_PATH_JEDI_TESTFILES} AND NOT DEFINED ${GIT_TAG_FUNC} )
-  ecbuild_bundle( PROJECT mpas-jedi-data GIT "https://github.com/JCSDA-internal/mpas-jedi-data.git" BRANCH develop UPDATE )
+  ecbuild_bundle( PROJECT mpas-jedi-data  GIT "https://github.com/jcsda-internal/mpas-jedi-data.git" BRANCH develop  )
 endif()
 
 # If mpas-jedi's current branch is available in mpas-jedi-data repo, that branch will be checked out
 branch_checkout (REPO_DIR_NAME mpas-jedi-data
-                 BRANCH ${GIT_BRANCH_FUNC} )
-
+	BRANCH develop ) #tmp solution for fetching mpas-jedi-data repo. 
+			 #This is required because the mpas-jedi dev branch is not being used.
 
 ecbuild_bundle_finalize()
