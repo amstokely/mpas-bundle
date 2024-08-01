@@ -78,7 +78,7 @@ branch_checkout (REPO_DIR_NAME ufo-data
 set(MPAS_DOUBLE_PRECISION "ON" CACHE STRING "MPAS-Model: Use double precision 64-bit Floating point.")
 set(MPAS_CORES init_atmosphere atmosphere CACHE STRING "MPAS-Model: cores to build.")
 ecbuild_bundle( PROJECT MPAS      GIT "https://github.com/MPAS-Dev/MPAS-Model" BRANCH hotfix-v8.2.1 UPDATE )
-ecbuild_bundle( PROJECT mpas-jedi GIT "https://github.com/JCSDA-internal/mpas-jedi"      BRANCH feature/MPAS-Model_v8.1 )
+ecbuild_bundle( PROJECT mpas-jedi GIT "https://github.com/amstokely/mpas-jedi"      BRANCH feature/MPAS-Model_v8.2 )
 
 # same procedure for mpas-jedi-data
 find_branch_name(REPO_DIR_NAME mpas-jedi)
