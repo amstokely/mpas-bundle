@@ -42,6 +42,7 @@ ecbuild_bundle( PROJECT vader     GIT "https://github.com/jcsda/vader.git"      
 ecbuild_bundle( PROJECT saber     GIT "https://github.com/JCSDA/saber.git"       BRANCH develop UPDATE)
 ecbuild_bundle( PROJECT crtm      GIT "https://github.com/JCSDA/CRTMv3.git"      BRANCH develop UPDATE )
 ecbuild_bundle( PROJECT ioda      GIT "https://github.com/JCSDA/ioda.git"        BRANCH develop UPDATE )
+ecbuild_bundle( PROJECT ufo-data  GIT "https://github.com/jcsda-internal/ufo-data.git"    BRANCH develop UPDATE )
 ecbuild_bundle( PROJECT ufo       GIT "https://github.com/JCSDA/ufo.git"         BRANCH develop UPDATE)
 
 # ioda and ufo test data
