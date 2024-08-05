@@ -15,6 +15,8 @@ module load eckit
 module load fckit
 module load fftw
 module load gptl
+module load gsl-lite
+module load hdf5
 module load netcdf-c
 module load netcdf-fortran
 module load parallel-netcdf
@@ -25,6 +27,7 @@ module load jedi-cmake
 module load ecbuild
 module load eigen
 module load py-setuptools
+module load py-pycodestyle
 module load sqlite
 module load openblas
 module load udunits
