@@ -18,6 +18,7 @@ module load gptl
 module load gsl-lite
 module load hdf5
 module load netcdf-c
+module load netcdf-cxx4
 module load netcdf-fortran
 module load parallel-netcdf
 module load parallelio
