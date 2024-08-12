@@ -1,15 +1,11 @@
 #!/bin/bash
 #
-MODULEPATH=""
-source /mnt/beegfs/andy.stokely/spack-stack/spack/opt/spack/linux-rhel8-zen2/gcc-12.2.0/lmod-8.7.24-u3b6n6iarioyrubv4zseezun5hzsnquo/lmod/8.7.24/init/bash
-module use /mnt/beegfs/andy.stokely/spack-stack/envs/mpas-bundle/install/modulefiles/Core
-module use /mnt/beegfs/andy.stokely/spack-stack/spack/share/spack/lmod/linux-rhel8-x86_64/Core
+module use /mnt/beegfs/andy.stokely/spack-stacks/spack-stack_1.7.0/envs/mpas-bundle/install/modulefiles/Core
 
 
-module purge
-module load gcc/12.2.0
-module load stack-gcc/12.2.0
-module load stack-openmpi/5.0.3
+module --force purge
+module load stack-gcc/9.4.0
+module load stack-openmpi/4.1.1
 module load atlas
 module load eckit
 module load fckit
@@ -18,7 +14,7 @@ module load gptl
 module load gsl-lite
 module load hdf5
 module load netcdf-c
-module load netcdf-cxx4
+module load netcdf-cxx
 module load netcdf-fortran
 module load parallel-netcdf
 module load parallelio
